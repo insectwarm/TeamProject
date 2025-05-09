@@ -15,18 +15,19 @@ public class Dragging_S : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+            int layerMask = LayerMask.GetMask("Draggables");
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 0f, layerMask);
             if (hit)
-            {
-                drag = hit.transform;
-                dragrigibody = drag.GetComponent<Rigidbody2D>();
-                if (dragrigibody != null)
-                {
-                    dragrigibody.bodyType = RigidbodyType2D.Kinematic;
-                    dragrigibody.linearVelocity = Vector2.zero;
-                }
-                offset = drag.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                end = drag.position;
+            { 
+                    drag = hit.transform;
+                    dragrigibody = drag.GetComponent<Rigidbody2D>();
+                    if (dragrigibody != null)
+                    {
+                        dragrigibody.bodyType = RigidbodyType2D.Kinematic;
+                        dragrigibody.linearVelocity = Vector2.zero;
+                    }
+                    offset = drag.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    end = drag.position;
             }
         }
         else if (Input.GetMouseButtonUp(0))
