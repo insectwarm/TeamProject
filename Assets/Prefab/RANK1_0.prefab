@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8165787426055774458}
   m_Layer: 6
   m_Name: RANK1_0
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -243,6 +243,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7250623043f5a4844a18b462798171a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 20
   Rank: 1
-  Speed: 11
+  Speed: 2
+  Damage: 1

@@ -15,7 +15,7 @@ public class TrajectoryLine_S : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject gameObject = GameObject.Find("Player");
+        GameObject gameObject = GameObject.FindGameObjectWithTag("Player");
         Vector3 end = Input.mousePosition;
         end.z = Mathf.Abs(Camera.main.transform.position.z);
         Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(end);
