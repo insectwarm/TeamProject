@@ -4,8 +4,6 @@ using UnityEngine;
 public class Stats_S : MonoBehaviour
 {
     private float health = 0.0f;
-    private bool isAlive = false;
-    public bool active = false;
     [SerializeField] private int Rank = 1;
     [SerializeField] public float Speed = 5f;
     [SerializeField] private float Damage = 5f;
@@ -13,15 +11,12 @@ public class Stats_S : MonoBehaviour
     private void Start()
     {
         health = 20 * Rank;
-        isAlive = true;
-        active = true;
     }
     
     private void Update()
     {
         if(health <= 0)
         {
-            isAlive = false;
             Destroy(gameObject);
         }
     }

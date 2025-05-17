@@ -15,16 +15,32 @@ public class Shooting_S : MonoBehaviour
     private bool charging = false;
     private Rigidbody2D rb;
     private PlayerInput playerInput;
+    public bool spawnCheck = true;
+    [SerializeField]
+    private float spawnCoolDown = 0.0f;
     // Update is called once per frame
+    private void Start()
+    {
+    }
+
     void Update()
     {
+        if(!spawnCheck)
+        spawnCoolDown -= 1.0f * Time.deltaTime;
+
+        if (spawnCoolDown <= 0)
+        {
+            spawnCheck = true;
+            spawnCoolDown = 3.0f;
+        }
+
         GameObject gameObject = GameObject.FindGameObjectWithTag("Player");
         if (gameObject)
         {
             start = gameObject.transform.position;
             end = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             direction = (end - start).normalized;
-            if (Input.GetMouseButtonDown(0) && gameObject.GetComponent<Stats_S>().active) { charging = true; }
+            if (Input.GetMouseButtonDown(0)) { charging = true; }
             if (charging)
             {
                 if (increasing)
@@ -49,13 +65,11 @@ public class Shooting_S : MonoBehaviour
             if (Input.GetMouseButtonUp(0))
             {
                 charging = false;
-                gameObject.GetComponent<Stats_S>().active = false;
-                if(!gameObject.GetComponent<Stats_S>().active)
-                {
-                    gameObject.GetComponent<Rigidbody2D>().linearVelocity = direction * (power * gameObject.GetComponent<Stats_S>().Speed);
-                    power = 0f;
-                    return;
-                }   
+                gameObject.GetComponent<Rigidbody2D>().linearVelocity = direction * (power * gameObject.GetComponent<Stats_S>().Speed);
+                gameObject.tag = "Untagged";
+                spawnCheck = false;
+                power = 0f;
+                return;  
             }
         }   
     }
