@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class PowerBar_S : MonoBehaviour
 {
-    private GameObject gameObject;
+    public new GameObject gameObject;
     public Image image;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
