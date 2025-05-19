@@ -17,7 +17,14 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Next Stage.unity
     guid: 0d1ceb3a34e6b1a42a6846e99aac1bd2
+<<<<<<< HEAD
   - enabled: 0
+=======
+  - enabled: 0
+    path: Assets/Scenes/LoadingScene.unity
+    guid: 193d7091b483bb9488c8a1cd5e2edf20
+  - enabled: 0
+>>>>>>> 6ab5c9e13df30397a7ff8766d66001ec270eaa34
     path: Assets/Scenes/GameClearScene.unity
     guid: 039ee1a16fea43241aa5d9720f5f3ff6
   - enabled: 0
