@@ -131,6 +131,8 @@ GameObject:
   - component: {fileID: 7828861}
   - component: {fileID: 7828863}
   - component: {fileID: 7828864}
+  - component: {fileID: 7828865}
+  - component: {fileID: 7828866}
   m_Layer: 0
   m_Name: SceneController
   m_TagString: Untagged
@@ -189,7 +191,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 594fc44df7ec4ee48a35e444208e0f22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadingSceneName: LoadingScene
   nextSceneName: Next Stage
+--- !u!114 &7828865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7828860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1d314ac34102d54abd9f22e4df1d91b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: 
+--- !u!114 &7828866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7828860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 037d52894f5dbfb4abfab7f6203d2a4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &124629095
 GameObject:
   m_ObjectHideFlags: 0
@@ -1092,7 +1120,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7828864}
         m_TargetAssemblyTypeName: NextStageLoader, Assembly-CSharp
-        m_MethodName: LoadNextStage
+        m_MethodName: LoadLoadingScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1328,9 +1356,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7828863}
-        m_TargetAssemblyTypeName: StageSceneLoader, Assembly-CSharp
-        m_MethodName: LoadStageSelectScene
+      - m_Target: {fileID: 7828864}
+        m_TargetAssemblyTypeName: NextStageLoader, Assembly-CSharp
+        m_MethodName: LoadLoadingScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
