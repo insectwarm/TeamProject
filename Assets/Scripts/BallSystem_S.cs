@@ -55,7 +55,6 @@ public class BallSystem_S : MonoBehaviour
                     list.Add(prefab);
                 }
             }
-
             Shuffle();
         }
     }
