@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_GUID: dd8c809be9bdf7d418e18f0f7d61f4f0
+  m_SerializeEntries:
+  - m_GUID: 44a4f6ac901e8b3458f501bb1591f14a
+    m_Address: PlayerPrefabs
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5143bb50d18be294992dbe8c0b5b90aa
+    m_Address: PlayerPrefabs
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5f77f56e3aef7da458da0983bc7690d3
+    m_Address: PlayerPrefabs
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 61be08aa11a4a6d4fbca83d6b129fcc9
+    m_Address: PlayerPrefabs
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 630c1670fd14c344ab3fe0c0c024c813
+    m_Address: PlayerPrefabs
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7e239f39f9661bf4f8151c631d27510d
+    m_Address: PlayerPrefabs
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 83c3d79d6c1783244ab9c4ef11f07a4a
+    m_Address: PlayerPrefabs
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8b491cbfb5ece7e4abe2a28a96c0c963
+    m_Address: PlayerPrefabs
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aba6fe0ed7604ff408eddfc1bf206c0a
+    m_Address: PlayerPrefabs
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: db6d14476dbe73148b02d1283d1991ac
+    m_Address: PlayerPrefabs
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 8d56bfca0b689264899432cab7828bf1, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 8d5fb91b1a4c6024a893256dce400a9b, type: 2}
+    - {fileID: 11400000, guid: 89ff58a4cc3dae141aed8495a2c13a77, type: 2}

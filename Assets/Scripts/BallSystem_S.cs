@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using UnityEditor;
 using Unity.Collections;
 using System.Linq;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
+using static UnityEngine.Rendering.VirtualTexturing.Debugging;
+using System.Collections;
 
 public class BallSystem_S : MonoBehaviour
 {
@@ -27,32 +31,32 @@ public class BallSystem_S : MonoBehaviour
     void Start()
     {
         list = new List<GameObject>();
+        StartCoroutine(LoadPrefabs());
+    }
 
-        string[] load = AssetDatabase.FindAssets("t:Prefab", new string[] { "Assets/Prefab/Player" });
+    private IEnumerator LoadPrefabs()
+    {
+        AsyncOperationHandle<IList<GameObject>> opHandle = Addressables.LoadAssetsAsync<GameObject>("PlayerPrefabs", null);
+        yield return opHandle;
 
-        foreach (string guide in load)
+        if(opHandle.Status == AsyncOperationStatus.Succeeded)
         {
-            string path = AssetDatabase.GUIDToAssetPath(guide);
-
-            GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(path);
-
-            if (prefab != null)
+            foreach (GameObject prefab in opHandle.Result)
             {
                 int copies = 0;
 
-                if(amount.ContainsKey(prefab.name))
+                if (amount.ContainsKey(prefab.name))
                 {
-                    copies = amount[prefab.name]; 
+                    copies = amount[prefab.name];
                 }
 
-                for(int i = 0;  i < copies; i++)
+                for (int i = 0; i < copies; i++)
                 {
                     list.Add(prefab);
                 }
             }
+            Shuffle();
         }
-
-        Shuffle();
     }
 
     // Update is called once per frame
@@ -79,7 +83,7 @@ public class BallSystem_S : MonoBehaviour
         Shooting_S Shooting = FindFirstObjectByType<Shooting_S>();
         if (gameObject == null)
         {
-            if (list[count] != null && count < list.Count && Shooting.spawnCheck)
+            if (count < list.Count && list[count] != null && Shooting.spawnCheck)
             {
                 GameObject prefab = list[count];
                 GameObject instance = Instantiate(prefab, GameObject.Find("Start Point").transform.position, Quaternion.identity);
